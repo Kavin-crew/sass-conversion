@@ -1,0 +1,157 @@
+//============
+// Middle area
+//============
+
+.middle {
+  grid-row: 4/5;
+  grid-column: full-start / full-end;
+
+  background-color: var(--color-gray-4);
+  position: relative;
+  z-index: 1;
+
+  @include respond("tab-port") {
+    grid-row: 4 / 5;
+  }
+
+  @extend .section-padding;
+
+  &__container {
+    padding: 12rem 0 2.5rem;
+
+    @include respond("tab-port") {
+      padding: 4.5rem 2.5rem;
+    }
+  }
+
+  &__content {
+    text-align: center;
+
+    small {
+      margin-bottom: 0.3rem;
+    }
+    span {
+      display: inline-block;
+      font-size: 6rem;
+    }
+
+    p {
+      max-width: 61%;
+      margin: 0 auto;
+
+      @include respond("tab-port") {
+        max-width: 100%;
+      }
+    }
+  }
+
+  // boxes
+  &__boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+    grid-column-gap: 2.3rem;
+    grid-row-gap: 2.3rem;
+    margin-top: 5.9rem;
+
+    @include respond("phone") {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__box {
+    padding: 10px;
+    min-height: 190px;
+    background: var(--color-white);
+    position: relative;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+
+    display: flex;
+    justify-content: space-between;
+    column-gap: 37px;
+
+    @include respond("tab-land") {
+      column-gap: 15px;
+    }
+
+    @include respond("tab-port") {
+      padding: 15px;
+      min-height: 140px;
+    }
+
+    @include respond("phone") {
+      justify-content: center;
+    }
+  }
+
+  &__box:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  &__heading,
+  &__heading_span {
+    font-size: 2.8rem;
+    margin-bottom: 0.6rem;
+    display: inline-block;
+
+    @include respond("tab-land") {
+      display: block;
+    }
+  }
+  &__box figure {
+    width: 35%;
+  }
+
+  &__box img {
+    max-width: 205px;
+  }
+
+  &__box--even {
+    flex-direction: row-reverse;
+    padding-left: 57px;
+
+    @include respond("tab-land") {
+      padding-left: 20px;
+    }
+
+    @include respond("tab-port") {
+      padding-left: 15px;
+    }
+    @include respond("phone") {
+      flex-direction: row;
+    }
+  }
+
+  &__box--even figure {
+    width: 42%;
+  }
+
+  &__inner_text {
+    padding-top: 4.3rem;
+
+    @include respond("tab-land") {
+      padding-top: 3.3rem;
+    }
+
+    @include respond("tab-port") {
+      padding-top: 0;
+      text-align: center;
+    }
+
+    @include respond("phone") {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}

@@ -1,0 +1,41 @@
+//============
+// Buttons
+//============
+
+.buttons {
+  &:link,
+  &:visited {
+    display: block;
+    width: 270px;
+    height: 72px;
+    line-height: 72px;
+    background-color: var(--colorGreen-1);
+    border-radius: 7px;
+    color: var(--color-white);
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+    padding-right: 69px;
+    position: relative;
+
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+  }
+
+  &:hover {
+    // background: var(--colorGreen-3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 6px rgba(0,0,0, 0.20);
+  }
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 6px rgba(0,0,0, 0.10);
+  }
+
+  & span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 34px;
+  }
+}

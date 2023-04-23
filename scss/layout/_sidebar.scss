@@ -1,0 +1,103 @@
+//============
+// Sidebar
+//============
+
+.sidebar {
+  grid-column: 1 / 8;
+  grid-row: 1 / 2;
+
+  @include respond("tab-land") {
+    grid-column: 1 / 7;
+  }
+
+  @include respond("tab-port") {
+    grid-column: 3 / 11;
+    grid-row: 2 / -1;
+  }
+
+  @include respond("phone") {
+    grid-column: 1 / -1;
+  }
+
+  position: relative;
+  &__figure {
+    width: 86%;
+  }
+  &__img {
+    max-width: 691px;
+  }
+  &__content {
+    position: absolute;
+    top: 5rem;
+    right: 0.9rem;
+    padding: 13.5rem 4.4rem 3rem;
+    min-height: 40.8rem;
+    max-width: 28.4rem;
+    width: 100%;
+    background: var(--colorGreen-1);
+    color: var(--color-white);
+
+    @include respond("tab-land") {
+      right: -1.1rem;
+      padding: 13.5rem 2.4rem 3rem;
+    }
+
+    @include respond("tab-port") {
+      position: static;
+      max-width: 100%;
+      text-align: center;
+      min-height: 0;
+    }
+  }
+
+  &__content::before {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: 70px;
+    left: 45px;
+    background: url(../images/main-icon.png) no-repeat top/100%;
+
+    @include respond("tab-land") {
+      top: 50px;
+      left: 22px;
+    }
+
+    @include respond("tab-port") {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__paragraph {
+  }
+
+  h2 {
+    small {
+      color: var(--color-white);
+    }
+  }
+
+  a:link,
+  a:visited {
+    background: var(--color-white);
+    color: var(--colorGreen-1);
+    width: 187px;
+    height: 59px;
+    line-height: 59px;
+    color: var(--color-gray-3);
+    font-size: 1.8rem;
+    margin-top: 39px;
+
+    @include respond("tab-port") {
+      margin: 30px auto 0;
+    }
+  }
+
+  a span {
+    color: var(--colorGreen-1);
+  }
+}

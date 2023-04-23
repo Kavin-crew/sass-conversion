@@ -1,0 +1,132 @@
+//============
+// Navigation
+//============
+
+.section-nav {
+  background-color: var(--color-white);
+
+  @include respond("tab-port") {
+    background-color: var(--colorGreen-1);
+  }
+
+  @extend .section-padding;
+}
+
+.nav {
+  @include respond("tab-port") {
+    padding: 15px;
+  }
+
+  & > ul {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 7rem;
+
+    @include respond("tab-land") {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    @include respond("tab-port") {
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__list {
+    max-width: 1005px;
+    margin-left: auto;
+    width: calc(100% - 370px);
+    height: 100%;
+    min-height: 134px;
+    text-align: right;
+    padding-top: 5.5rem;
+
+    position: relative;
+    z-index: 0;
+
+    @include respond("tab-land") {
+      width: calc(100% - 325px);
+    }
+
+    @include respond("tab-port") {
+      width: 100%;
+      padding: 15px;
+      max-width: 100%;
+      min-height: 0;
+      text-align: center;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+
+      @include respond("tab-port") {
+        width: 32%;
+        margin: 5px 0;
+      }
+
+      @include respond("phone") {
+        width: 100%; margin: 3px 0;
+      }
+    }
+    li:not(:last-child) a::before {
+      content: "";
+      position: absolute;
+      display: block;
+    }
+
+    a:link {
+      font-size: 1.8rem;
+      font-family: var(--font-secondary);
+      color: var(--color-white);
+      font-weight: 500;
+
+      @include respond("tab-port") {
+        font-size: 20px;
+        line-height: 50px;
+        border: 1px solid #fff;
+        display: block;
+        border-radius: 7px; 
+      }
+    }
+
+    a:hover,
+    a.active {
+      text-decoration: underline;
+
+      @include respond("tab-port") {
+        text-decoration: none;
+        color: var(--color-primary);
+        border: 1px solid transparent;
+        background-color: var(--color-white);
+      }
+    }
+
+    li:first-child {
+      margin-left: 0;
+    }
+    li:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__list::before {
+    content: "";
+    display: block;
+    width: 127%;
+    height: 100%;
+    background: var(--colorGreen-1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include respond("tab-port") {
+      display: none;
+    }
+  }
+}

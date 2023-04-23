@@ -1,0 +1,38 @@
+.section-padding {
+  padding: 0 2rem;
+
+  @include respond("tab-port") {
+    padding: 0;
+  }
+}
+
+.container-padding {
+  padding: 2.5rem 0;
+}
+//============
+// Page - Home
+//============
+
+.fixed_Nav {
+  grid-row: 1 / 2;
+  grid-column: center-start / center-end;
+
+  background: var(--color-white);
+  border-bottom: 2px solid var(--color-gray-2);
+  min-height: 134px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+
+  @include respond("tab-port") {
+    grid-column: full-start / full-end;
+    min-height: 0;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}

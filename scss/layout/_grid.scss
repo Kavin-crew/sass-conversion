@@ -1,0 +1,14 @@
+//============
+// Grid
+//============
+
+.layout_container {
+    display: grid;
+    grid-template-rows: 134px 836px minmax(749px, max-content) minmax(864px, max-content) min-content;
+    grid-template-columns: [full-start] minmax(25px, 1fr) [center-start] repeat(12, minmax(min-content, 114.5833px)) [center-end] minmax(25px, 1fr) [full-end];
+
+    @include respond("tab-port") {
+        grid-template-rows: min-content 1fr;
+        grid-template-columns: [full-start] 25px [center-start] repeat(10, 1fr) [center-end] 25px [full-end];
+      }
+  }

@@ -1,0 +1,53 @@
+//============
+// Main Area
+//============
+
+.main {
+  grid-row: 3/4;
+  grid-column: full-start / full-end;
+
+  @include respond("tab-port") {
+    grid-column: center-start / center-end;
+  }
+
+  &__container {
+    min-height: 749px;
+    padding: 12rem 0 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    @include respond("tab-land") {
+      padding: 12rem 2rem 2.5rem;
+    }
+
+    @include respond("tab-port") {
+      min-height: 0;
+      grid-template-rows: max-content;
+      padding: 4.5rem 0;
+      grid-gap: 4rem;
+    }
+
+    @include respond("phone") {
+      grid-template-rows: min-content;
+      grid-template-columns: 1fr;
+    }
+  }
+  &__content {
+    grid-column: 9 / -1;
+
+    padding-top: 8.1rem;
+    transform: translateX(-11px);
+
+    @include respond("tab-land") {
+      grid-column: 8 / -1;
+    }
+
+    @include respond("tab-port") {
+      padding-top: 0;
+      transform: none;
+      text-align: center;
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+  }
+}

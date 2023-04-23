@@ -1,0 +1,238 @@
+//============
+// Bottom Area
+//============
+
+// for bottom footer stick to top background
+.bottom_footer_bg {
+  grid-row: 5/-1;
+  grid-column: full-start / full-end;
+
+  margin-top: -53.6rem;
+  background: url(../images/bottom1-bg.jpg) no-repeat center top;
+
+  @include respond("tab-port") {
+    grid-row: unset;
+    background: unset;
+    margin-top: 0;
+  }
+}
+
+// bottom1
+.bottom1 {
+  position: relative;
+
+  @extend .section-padding;
+
+  &__container {
+    min-height: 1364px;
+    padding: 86.3rem 0 2.5rem;
+
+    @include respond("tab-port") {
+      min-height: 0;
+      padding: 4.5rem 2.5rem;
+      background: var(--colorGreen-3);
+    }
+  }
+  &__content {
+    max-width: 38%;
+    width: 45%;
+
+    @include respond("tab-port") {
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+    }
+
+    h2 {
+      small,
+      span {
+        color: var(--color-white);
+      }
+    }
+
+    a:link,
+    a:visited {
+      width: 190px;
+      margin-top: 3.2rem;
+
+      @include respond("tab-port") {
+        margin: 30px auto;
+      }
+    }
+  }
+
+  &__paragraph {
+    color: var(--color-white);
+  }
+
+  &__form {
+    display: block;
+    max-width: 582px;
+    min-height: 743px;
+    background: var(--colorGreen-1);
+    color: var(--color-white);
+    position: absolute;
+    top: 79rem;
+    right: 0;
+    width: 43%;
+    z-index: 1;
+
+    @include respond("tab-port") {
+      max-width: 100%;
+      min-height: 400px;
+      background: var(--colorGreen-2);
+      width: 100%;
+      position: static;
+    }
+  }
+
+  &::before {
+    content: "";
+    pointer-events: none;
+    display: block;
+    width: 100%;
+    height: 805px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(../images/bottom1-overlay.png) repeat-x;
+    z-index: 0;
+
+    @include respond("tab-port") {
+      display: none;
+    }
+  }
+}
+
+// bottom2
+.bottom2 {
+  background-color: var(--color-white);
+
+  @extend .section-padding;
+  &__container {
+    display: flex;
+    min-height: 737px;
+    padding: 16rem 0 2.5rem;
+    justify-content: space-between;
+    column-gap: 2.3rem;
+
+    @include respond("tab-land") {
+      padding: 16rem 2rem 2.5rem;
+    }
+
+    @include respond("tab-port") {
+      padding: 4.5rem 2.5rem;
+      text-align: center;
+      min-height: 0;
+    }
+  }
+  &__figure {
+    width: 48.3%;
+
+    @include respond("tab-land") {
+      width: 43%;
+    }
+  }
+  &__img {
+    max-width: 663px;
+  }
+
+  // boxes
+  &__boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 42.7%;
+    width: 100%;
+    padding-top: 23rem;
+    padding-bottom: 10rem;
+    grid-column-gap: 7.9rem;
+
+    @include respond("tab-land") {
+      max-width: 50%;
+
+      max-width: 50%;
+      padding-bottom: 13rem;
+    }
+
+    @include respond("tab-port") {
+      max-width: 100%;
+      padding-bottom: 0;
+      padding-top: 11rem;
+      grid-column-gap: 2rem;
+    }
+
+    @include respond("tab-port") {
+      grid-template-columns: 1fr; 
+      grid-gap: 16rem;
+    }
+
+    h2 {
+      small {
+        margin-bottom: 0.4rem;
+      }
+      span {
+      }
+    }
+    a:link,
+    a:visited {
+      width: 187px;
+      margin-top: 4.8rem;
+      height: 59px;
+      line-height: 59px;
+
+      @include respond("tab-port") {
+        margin: 30px auto 0;
+      }
+
+      span {
+        top: 45%;
+      }
+    }
+  }
+
+  &__box {
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    position: relative;
+  }
+
+  &__box::before {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: -92px;
+    left: 3px;
+
+    @include respond("tab-port") {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__box--1::before {
+    background: url(../images/bottom2-icon1.png) no-repeat top/100%;
+  }
+  &__box--2::before {
+    background: url(../images/bottom2-icon2.png) no-repeat top/100%;
+  }
+
+  &__paragraph {
+  }
+}
+
+// bottom3
+.bottom3 {
+  @extend .section-padding;
+
+  @include respond("tab") {
+    display: none;
+  }
+
+  &__container {
+    min-height: 312px;
+  }
+}
